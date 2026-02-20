@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1963 Club — Design Inspiration</title>
+<meta name="description" content="Design inspiration and reference gallery for 1963 Club, a private members gaming and cocktail salon at El Cortez, Las Vegas.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="1963 Club — Design Inspiration">
+<meta property="og:description" content="Design inspiration and reference gallery for 1963 Club at El Cortez, Las Vegas.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --burgundy: #4A0F1A;
+  --burgundy-deep: #2E0A11;
+  --gold: #C4A265;
+  --gold-light: #D4B87A;
+  --gold-dim: #B8975A;
+  --cream: #E8DCC8;
+  --cream-dim: #E0D4C0;
+  --charcoal: #1A1614;
+  --charcoal-warm: #221E1A;
+  --black: #0D0B0A;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-dim) var(--black);
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--black);
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+/* ── HEADER ── */
+.gallery-header {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+}
+
+.back-link {
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.back-link:hover {
+  color: var(--gold);
+}
+
+.gallery-header .eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2.5rem;
+}
+
+.gallery-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+
+.gold-rule {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 2rem;
+  opacity: 0.6;
+}
+
+.gallery-header p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--cream-dim);
+  max-width: 560px;
+  line-height: 1.85;
+}
+
+/* ── GALLERY GRID ── */
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 6rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85) contrast(1.05);
+  transition: filter 0.5s ease, transform 0.8s ease;
+}
+.gallery-item:hover img {
+  filter: brightness(0.95) contrast(1.08);
+  transform: scale(1.05);
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13, 11, 10, 0.5) 0%, transparent 40%);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.gallery-item:hover::after {
+  opacity: 0.5;
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(13, 11, 10, 0.96);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 1px solid rgba(196, 162, 101, 0.1);
+}
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.3s ease;
+}
+.lightbox-close:hover {
+  color: var(--gold);
+}
+
+/* ── FOOTER ── */
+.gallery-footer {
+  background: var(--black);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(196, 162, 101, 0.15);
+}
+.gallery-footer p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .back-link {
+    top: 1.2rem;
+    left: 1.5rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="gallery-header">
+  <a href="index.html" class="back-link">&larr; Back to Presentation</a>
+  <p class="eyebrow">Concept Development</p>
+  <h1>Inspiration &amp; Reference</h1>
+  <div class="gold-rule"></div>
+  <p>A curated collection of spaces, textures, and atmospheres informing the vision for 1963 Club. These references guide the design direction — from lighting and material choices to the overall feeling of the room.</p>
+</div>
+
+<div class="gallery-container">
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Images populated by script -->
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">Close</button>
+  <img id="lightboxImg" src="" alt="Inspiration reference">
+</div>
+
+<footer class="gallery-footer">
+  <p>&copy; 1963 Club &middot; Concept Presentation &middot; Confidential</p>
+  <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.65rem;">Presented by <a href="https://www.cornerbarmgmt.com/" style="color: var(--gold-dim); text-decoration: none; border-bottom: 1px solid rgba(196,162,101,0.2);">Corner Bar Management</a></p>
+</footer>
+
+<script>
+const images = [
+  '0229c3770ffd4c60451743db9a194946.jpg',
+  '05df13bddc28fc61478f7de3282bf2c4.jpg',
+  '3004cce2a42d444477db1d3d558e60c7.jpg',
+  '42f40144daebdef52db3d808de54b6c1.jpg',
+  '4982c998aa49f6e7f7616049c27cbb6d.jpg',
+  '4c0fc2b23005ce3a95f48cf5290af1b3.jpg',
+  '6f4941c72874eaf3f40729b04663d16e.jpg',
+  '98ba765123906284827310cf1b47271e.jpg',
+  'b0ba503000389d75e5040813dd08eca1.jpg',
+  'c6b89bd8b00ac1a3d2a51db9175754d3.jpg',
+  'cc71fcee7fd9e27373f01654bc9b585e.jpg',
+  'cda48ec2e89326fc41e5beef308208f4.jpg',
+  'd9fb3fd39c9ecc6ab29c21f65776f5e1.jpg',
+  'dd75afbd580494815449239cca35f32c.jpg',
+  'e5439daacf6b35dac79e4cb81b304485.jpg',
+  'f4df81a8985cb23f4e611df4dbdad813.jpg'
+];
+
+const grid = document.getElementById('galleryGrid');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+images.forEach(img => {
+  const item = document.createElement('div');
+  item.className = 'gallery-item';
+  item.innerHTML = `<img src="public/images/${img}" alt="Design inspiration reference" loading="lazy">`;
+  item.addEventListener('click', () => {
+    lightboxImg.src = `public/images/${img}`;
+    lightbox.classList.add('active');
+  });
+  grid.appendChild(item);
+});
+
+lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) lightbox.classList.remove('active');
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') lightbox.classList.remove('active');
+});
+</script>
+</body>
+</html>

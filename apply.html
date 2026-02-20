@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1963 Club — Membership Inquiry</title>
+<meta name="description" content="Request membership consideration for 1963 Club, a private gaming and cocktail salon at El Cortez, Las Vegas.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="1963 Club — Membership Inquiry">
+<meta property="og:description" content="Request membership consideration for 1963 Club, a private gaming and cocktail salon at El Cortez, Las Vegas.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --burgundy: #4A0F1A;
+  --burgundy-deep: #2E0A11;
+  --gold: #C4A265;
+  --gold-light: #D4B87A;
+  --gold-dim: #B8975A;
+  --cream: #E8DCC8;
+  --cream-dim: #E0D4C0;
+  --charcoal: #1A1614;
+  --charcoal-warm: #221E1A;
+  --black: #0D0B0A;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-dim) var(--black);
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--black);
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+/* ── TOP NAV ── */
+.apply-nav {
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(196, 162, 101, 0.08);
+}
+.apply-nav a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.apply-nav a:hover {
+  color: var(--gold);
+}
+.apply-nav .nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  color: var(--gold);
+}
+
+/* ── PAGE LAYOUT ── */
+.apply-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.apply-container {
+  max-width: 540px;
+  width: 100%;
+}
+
+/* ── HEADER ── */
+.apply-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.apply-header .eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2rem;
+}
+
+.apply-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.gold-rule {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 1.8rem;
+  opacity: 0.5;
+}
+
+.apply-header p {
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  color: var(--cream-dim);
+  line-height: 1.85;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* ── FORM ── */
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(196, 162, 101, 0.2);
+  padding: 0.7rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--cream);
+  outline: none;
+  transition: border-color 0.4s ease;
+  letter-spacing: 0.02em;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-bottom-color: var(--gold);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(232, 220, 200, 0.25);
+  font-style: italic;
+}
+
+.form-group select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8975A' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  padding-right: 1.5rem;
+}
+
+.form-group select option {
+  background: var(--charcoal);
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.7;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+}
+
+/* ── REFERRAL SECTION ── */
+.referral-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--cream-dim);
+  font-style: italic;
+  line-height: 1.75;
+  padding: 1.2rem 0;
+  border-top: 1px solid rgba(196, 162, 101, 0.08);
+  opacity: 0.7;
+}
+
+/* ── SUBMIT ── */
+.form-submit {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.submit-btn {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: transparent;
+  padding: 1rem 3rem;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: translateY(101%);
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.submit-btn:hover {
+  color: var(--black);
+}
+.submit-btn:hover::before {
+  transform: translateY(0);
+}
+.submit-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── CONFIRMATION OVERLAY ── */
+.confirmation {
+  display: none;
+  text-align: center;
+  padding: 4rem 0;
+}
+.confirmation.active {
+  display: block;
+}
+.confirmation h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+.confirmation .gold-rule {
+  margin-bottom: 1.5rem;
+}
+.confirmation p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  color: var(--cream-dim);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+.confirmation .return-link {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  text-decoration: none;
+  padding: 0.7rem 2rem;
+  border: 1px solid rgba(196, 162, 101, 0.2);
+  transition: all 0.4s ease;
+}
+.confirmation .return-link:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ── FOOTER ── */
+.apply-footer {
+  padding: 2rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(196, 162, 101, 0.08);
+}
+.apply-footer p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  opacity: 0.5;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .apply-nav {
+    padding: 1rem 1.5rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .apply-page {
+    padding: 3rem 1.5rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="apply-nav">
+  <a href="index.html" class="nav-logo">1963 Club</a>
+  <a href="index.html">&larr; Return to Presentation</a>
+</div>
+
+<main class="apply-page">
+  <div class="apply-container">
+
+    <!-- HEADER -->
+    <div class="apply-header">
+      <p class="eyebrow">Membership Inquiry</p>
+      <h1>Request Consideration</h1>
+      <div class="gold-rule"></div>
+      <p>Membership to 1963 Club is by invitation and referral only. The following inquiry does not guarantee consideration, but it begins the conversation.</p>
+    </div>
+
+    <!-- FORM -->
+    <form class="apply-form" id="applyForm">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="John" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(702) 555-0100">
+        </div>
+        <div class="form-group">
+          <label for="city">City of Residence</label>
+          <input type="text" id="city" name="city" placeholder="Las Vegas">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="referral">Referred By</label>
+        <input type="text" id="referral" name="referral" placeholder="Name of referring member, if applicable">
+      </div>
+
+      <div class="form-group">
+        <label for="interest">Primary Interest</label>
+        <select id="interest" name="interest" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="gaming">Private Gaming</option>
+          <option value="dining">Dining & Spirits</option>
+          <option value="social">Social Membership</option>
+          <option value="corporate">Corporate Entertaining</option>
+          <option value="all">Full Membership</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Anything You'd Like Us to Know</label>
+        <textarea id="message" name="message" placeholder="Optional — tell us about yourself or what drew you to 1963 Club."></textarea>
+      </div>
+
+      <p class="referral-note">All inquiries are reviewed discretely. A member of our team will respond within 48 hours if your inquiry proceeds to the next step.</p>
+
+      <div class="form-submit">
+        <button type="submit" class="submit-btn"><span>Submit Inquiry</span></button>
+      </div>
+    </form>
+
+    <!-- CONFIRMATION (shown after submit) -->
+    <div class="confirmation" id="confirmation">
+      <h2>Inquiry Received.</h2>
+      <div class="gold-rule"></div>
+      <p>Thank you for your interest in 1963 Club. Your inquiry has been noted and will be reviewed by our membership committee.</p>
+      <p>If your application proceeds, a member of our team will be in touch within 48 hours.</p>
+      <a href="index.html" class="return-link">Return to Presentation</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="apply-footer">
+  <p>1963 Club &middot; El Cortez &middot; Las Vegas &middot; Confidential</p>
+  <p style="margin-top: 0.8rem; opacity: 0.5; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-dim);">Presented by <a href="https://www.cornerbarmgmt.com/" style="color: var(--gold-dim); text-decoration: none; border-bottom: 1px solid rgba(196,162,101,0.2);">Corner Bar Management</a></p>
+</footer>
+
+<script>
+document.getElementById('applyForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Hide form, show confirmation
+  this.style.display = 'none';
+  document.querySelector('.apply-header').style.display = 'none';
+  document.getElementById('confirmation').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>

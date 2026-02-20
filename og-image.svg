@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0D0B0A"/>
+
+  <!-- Subtle border -->
+  <rect x="40" y="40" width="1120" height="550" rx="2" fill="none" stroke="#C4A265" stroke-width="0.5" opacity="0.25"/>
+
+  <!-- Corner diamonds -->
+  <g opacity="0.3" fill="#C4A265">
+    <rect x="57" y="57" width="6" height="6" transform="rotate(45 60 60)"/>
+    <rect x="1137" y="57" width="6" height="6" transform="rotate(45 1140 60)"/>
+    <rect x="57" y="567" width="6" height="6" transform="rotate(45 60 570)"/>
+    <rect x="1137" y="567" width="6" height="6" transform="rotate(45 1140 570)"/>
+  </g>
+
+  <!-- Eyebrow text -->
+  <text x="600" y="220" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" letter-spacing="8" fill="#C4A265" opacity="0.7">PRIVATE MEMBERS GAMING &amp; COCKTAIL SALON</text>
+
+  <!-- Main title -->
+  <text x="600" y="300" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="400" letter-spacing="12" fill="#E8DCC8">1963</text>
+  <text x="600" y="360" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="400" letter-spacing="16" fill="#C4A265">CLUB</text>
+
+  <!-- Gold rule -->
+  <line x1="520" y1="395" x2="680" y2="395" stroke="#C4A265" stroke-width="1" opacity="0.5"/>
+
+  <!-- Tagline -->
+  <text x="600" y="440" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-style="italic" fill="#E8DCC8" opacity="0.7">The Room Beneath The Room</text>
+
+  <!-- Location -->
+  <text x="600" y="510" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="6" fill="#C4A265" opacity="0.5">EL CORTEZ  ·  LAS VEGAS</text>
+</svg>

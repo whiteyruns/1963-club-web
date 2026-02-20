@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><body style="background:#000;color:#fff;font-family:monospace">
+<div id="status">Loading...</div>
+<script>
+const images = {
+    'hero': 'https://static.bananaproai.com/image/0da9794e3f384d989d40c9caf251a578.jpeg',
+    'dinner': 'https://static.bananaproai.com/image/32259a29b6cc4390995686af754dcd87.jpeg',
+    'arrival': 'https://static.bananaproai.com/image/3478aaee4fe9495a8cbe0ac76632afbd.jpeg',
+    'room': 'https://static.bananaproai.com/image/2b9a20ff9778476bb61b5c9f394b16b8.jpeg',
+    'pour': 'https://static.bananaproai.com/image/e966aa30c4dd4f1fab088eb8142f81c0.jpeg',
+    'table': 'https://static.bananaproai.com/image/5bf207b10eb8439d83015d0c06fd5ccc.jpeg',
+    'code': 'https://static.bananaproai.com/image/5917e94b021041eca0f0f34147f7987d.jpeg',
+};
+
+async function captureAll() {
+    const status = document.getElementById('status');
+    const results = [];
+    for (const [name, url] of Object.entries(images)) {
+        status.textContent = `Loading ${name}...`;
+        try {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            const loaded = new Promise((res, rej) => { img.onload = res; img.onerror = rej; });
+            img.src = url;
+            await loaded;
+            const canvas = document.createElement('canvas');
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            canvas.getContext('2d').drawImage(img, 0, 0);
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.75);
+            
+            await fetch('http://localhost:9999', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({name, data: dataUrl})
+            });
+            results.push(name + ': OK');
+        } catch(e) {
+            results.push(name + ': ' + e.message);
+        }
+    }
+    status.textContent = results.join(' | ');
+    window._done = true;
+}
+captureAll();
+</script></body></html>
